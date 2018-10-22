@@ -6,8 +6,7 @@ if os.environ['USER'] == 'klay6683':
     basedir = Path("/Users/klay6683/Dropbox/data/planet4/p4_for_Zade/P4_catalog_v1.1/")
 else:
     basedir = Path("C:\Users\Zade\Desktop\HonorsMaterials\ForTask1\p4_analysis\P4_catalog_v1.0\")
-#this shouldn't be this long, basedir should be regardless of which pc it's on right? and the path above directs it to this
-#ask michael
+#this is the old two catalogs, should update with new ones in a sec
 fans = basedir / "P4_catalog_v1.0_L1C_cut_0.5_fan_meta_merged.csv"
 blotches = basedir / "P4_catalog_v1.0_L1C_cut_0.5_blotch_meta_merged.csv"
 

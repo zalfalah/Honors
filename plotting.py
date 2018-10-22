@@ -2,15 +2,14 @@ import pandas as pd
 import seaborn as sns
 import os
 from pathlib import Path
-#wait how do I actually write these bits? do I need his path specifically?
 if os.environ['USER'] == 'klay6683':
-    basedir = Path("....")
+    basedir = Path("/Users/klay6683/Dropbox/data/planet4/p4_for_Zade/P4_catalog_v1.1/")
 else:
-    basedir = Path("...")
+    basedir = Path("C:\Users\Zade\Desktop\HonorsMaterials\ForTask1\p4_analysis\P4_catalog_v1.0\")
 #this shouldn't be this long, basedir should be regardless of which pc it's on right? and the path above directs it to this
 #ask michael
-fans = basedir / "C:\Users\Zade\Desktop\HonorsMaterials\ForTask1\p4_analysis\P4_catalog_v1.0\P4_catalog_v1.0_L1C_cut_0.5_fan_meta_merged.csv"
-blotches = basedir / "C:\Users\Zade\Desktop\HonorsMaterials\ForTask1\p4_analysis\P4_catalog_v1.0\P4_catalog_v1.0_L1C_cut_0.5_blotch_meta_merged.csv"
+fans = basedir / "P4_catalog_v1.0_L1C_cut_0.5_fan_meta_merged.csv"
+blotches = basedir / "P4_catalog_v1.0_L1C_cut_0.5_blotch_meta_merged.csv"
 
 #this doesn't have types in it don't know if we need it.  Only do if we mix dsets
 #can add an if to mix dsets, concat and add type identifiers.  Will that be necessary though? only mix once, already have it

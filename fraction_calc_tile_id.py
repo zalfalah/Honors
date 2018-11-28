@@ -24,6 +24,21 @@ blotches = pd.read_csv(r"C:\Users\Zade\Documents\python_from_others\planet4_resu
 
 
 def get_tile_fraction(tile_id, scope = 'hirise'):
+        '''
+    Takes a tile_id and returns the fractional ground coverage of both fans and blotches within that tile
+    
+    Parameters
+    __________
+    tile_id : str
+        The tile_id you wish to find coverage for
+    scope : str, optional
+        Select between hirise (default) or other scopes 
+        
+    Returns
+    _______
+    float
+        The fraction of the ground covered by both fans and blotches for your given tile as a float
+    '''
     id_ = tile_id
     blotch = blotches[blotches.tile_id == io.check_and_pad_id(id_)]
     fan = fans[fans.tile_id == io.check_and_pad_id(id_)]

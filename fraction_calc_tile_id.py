@@ -1,9 +1,4 @@
 
-# coding: utf-8
-
-# In[3]:
-
-
 import pandas as pd
 from planet4 import io
 import geopandas as gp
@@ -11,20 +6,11 @@ import shapely
 from planet4 import markings
 from shapely.ops import unary_union
 
-
-# In[4]:
-
-
 fans = pd.read_csv(r"C:\Users\Zade\Documents\python_from_others\planet4_results\P4_catalog_v1.1_L1C_cut_0.5_fan.csv")
-
 blotches = pd.read_csv(r"C:\Users\Zade\Documents\python_from_others\planet4_results\P4_catalog_v1.1_L1C_cut_0.5_blotch.csv")
 
-
-# In[15]:
-
-
 def get_tile_fraction(tile_id, scope = 'hirise'):
-        '''
+    '''
     Takes a tile_id and returns the fractional ground coverage of both fans and blotches within that tile
     
     Parameters
@@ -52,4 +38,3 @@ def get_tile_fraction(tile_id, scope = 'hirise'):
     tile_area = pixel_area * squared_pixel_scale
     fraction = area / tile_area
     return fraction
-

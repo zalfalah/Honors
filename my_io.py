@@ -11,3 +11,11 @@ def get_fans_blotches():
     fans = pd.read_csv(rootpath / "P4_catalog_v1.1_L1C_cut_0.5_fan.csv")
     blotches = pd.read_csv(rootpath / "P4_catalog_v1.1_L1C_cut_0.5_blotch.csv")
     return fans, blotches
+
+
+def get_tilecoords():
+    return pd.read_csv(rootpath / "P4_catalog_v1.1_tile_coords_final.csv")
+
+
+def get_metadata():
+    return pd.read_csv(rootpath / "P4_catalog_v1.1_metadata.csv")

@@ -112,11 +112,25 @@ def get_obsids_for_region(region_name, year=None):
 
 
 class CoverageCalculator:
+    which_values = ["fans", "blotches", "both"]
+
     def __init__(self):
         self.read_data()
         self.read_metadata()
         print("Note that obsid must be set to a string value before this works.")
         self._obsid = None
+        self.union_done = False
+        self._which = "both"
+
+    @property
+    def which(self):
+        return self._which
+
+    @which.setter
+    def which(self, value):
+        if value not in self.which_values:
+            raise ValueError(f"value must be one of {self.which_values}.")
+        self._which = value
         self.union_done = False
 
     def read_data(self):
@@ -179,7 +193,14 @@ class CoverageCalculator:
 
     @property
     def gs_combined(self):
-        return pd.concat([self.gs_fans, self.gs_blotches], ignore_index=True, sort=True)
+        if self.which == "both":
+            return pd.concat(
+                [self.gs_fans, self.gs_blotches], ignore_index=True, sort=True
+            )
+        elif self.which == "fans":
+            return self.gs_fans
+        elif self.which == "blotches":
+            return self.gs_blotches
 
     @property
     def union(self):

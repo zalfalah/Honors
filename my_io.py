@@ -19,3 +19,7 @@ def get_tilecoords():
 
 def get_metadata():
     return pd.read_csv(rootpath / "P4_catalog_v1.1_metadata.csv")
+
+
+def get_region_names():
+    return pd.read_csv(rootpath / "obsid_region_names.csv")

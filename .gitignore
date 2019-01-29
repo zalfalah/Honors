@@ -39,3 +39,4 @@ Thumbs.db
 **/.vscode/
 **/.pytest_cache/
 **/.ipynb_checkpoints/
+*.pyc

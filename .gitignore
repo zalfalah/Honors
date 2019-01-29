@@ -40,3 +40,6 @@ Thumbs.db
 **/.pytest_cache/
 **/.ipynb_checkpoints/
 *.pyc
+*.png
+*.csv
+*.csv

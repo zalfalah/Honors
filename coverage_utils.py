@@ -100,6 +100,11 @@ def get_Ls(obsid):
     metadata.set_index("OBSERVATION_ID", inplace=True)
     return metadata.at[obsid, "SOLAR_LONGITUDE"]
 
+#Trying to get Latitude
+def get_Lat(obsid):
+    metadata = get_metadata()
+    metadata.set_index("OBSERVATION_ID", inplace=True)
+    return metadata.at[obsid, "IMAGE_CENTER_LATITUDE"]
 
 def get_obsids_for_region(region_name, year=None):
     region_names = get_region_names()
@@ -143,6 +148,12 @@ class CoverageCalculator:
         self.meta = get_metadata().set_index("OBSERVATION_ID")
         print("Done.")
 
+        
+    #Trying to add PlanetographicLatitude
+    @property
+    def Lat(self):
+        return self.meta.at[self.obsid, "IMAGE_CENTER_LATITUDE"]
+        
     @property
     def Ls(self):
         return self.meta.at[self.obsid, "SOLAR_LONGITUDE"]

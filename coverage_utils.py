@@ -117,6 +117,9 @@ def get_obsids_for_region(region_name, year=None):
 
 
 class CoverageCalculator:
+    """
+    Calculate the shapely fractions of HiRISEs images covered by deposits.
+    """
     which_values = ["fans", "blotches", "both"]
 
     def __init__(self):

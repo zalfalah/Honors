@@ -45,3 +45,4 @@ Thumbs.db
 *.csv
 .matplotlibrc
 .matplotlibrc
+*.pdf
